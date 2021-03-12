@@ -62,32 +62,36 @@ const startTimer = () => {
             clearInterval(timer);
             loseGame();
         }
-        
+
     },1000)
 };
 
 const renderBlanks = () => {
     
-
-    // loop through allWords and choose 1 word 
+     // loop through allWords and choose 1 word 
+    chosenWord = allWords[Math.floor(Math.random()* allWords.length)]
 
     // split the chosenWord
+    let splitWord = chosenWord.split('')
 
-    // assign the length of that split word into a variable \
+
+    // assign the length of that split word into a variable 
+    numOfBlanks = splitWord.length;
     
-
-
     // use a for loop 
     // to push _ into wordDisplay for the lenght of the split chosen word 
 
+    let blankLetters = [];
 
+    for (let i = 0; i < numOfBlanks; i++) {
+        blankLetters.push('_')
+    }
 
-
-
-
+    $('.word-blanks').text(blankLetters.join(' '))
 
 
 };
+
 
 const setWins = () => {
 
