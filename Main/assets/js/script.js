@@ -3,8 +3,8 @@ const allWords = ['javascript', 'array', 'object', 'condition', 'boolean'];
 let chosenWord = '';
 
 let numOfBlanks = 0;
-let wins = 0;
-let losses = 0;
+let wins = 2;
+let losses = 2;
 
 let isWin = false
 
@@ -64,7 +64,7 @@ const startTimer = () => {
         }
 
     },1000)
-};
+}; // DONE
 
 const renderBlanks = () => {
     
@@ -90,19 +90,23 @@ const renderBlanks = () => {
     $('.word-blanks').text(blankLetters.join(' '))
 
 
-};
+}; // DONE 
 
 
 const setWins = () => {
 
-    // use local storage to set wins 
+    localStorage.setItem('wins', wins);
 
-};
+}; //DONE 
 
 const setLosses = () => {
 
-    // use local storage to set losses
-};
+    localStorage.setItem('losses', losses);
+}; // DONE
+
+
+
+
 
 const getWins = () => {
 
@@ -127,20 +131,23 @@ const checkWin = () => {
 
 const checkLetters = (letter) => {
 
+    let letterInWord = false;
 
-    // create var name "letterInWord" and assign to false
- // loop through numOfblanks
-    // if word[i] === letter 
-    // letterInword = true
+    for (let i = 0; i < numOfBlanks;i++) {
+        if(chosenWord[i] === letter) {
+            letterInWord = true;
+        }
+    }
 
-// if letterInWord 
-    // loop through numOfBlanks
-    // if word[i] === letter
-    // blankLetters = letter
-
-
-    // inside if true statement 
-        // display blankLetters joined together
+    if(letterInWord) {
+        for(let j = 0; j < numOfBlanks; j++) {
+            if(chosenWord[i] === letter) {
+                blankLetters = letter
+            }
+        }
+    
+        $('.word-blanks').text(blankLetters.join(' '))
+    }
 
 
 };
