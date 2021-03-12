@@ -1,3 +1,4 @@
+//Variable Declarations
 const allWords = ['javascript', 'array', 'object', 'condition', 'boolean'];
 let chosenWord = '';
 
@@ -7,7 +8,11 @@ let losses = 0;
 
 let isWin = false
 
+let timer;
 let timerCount;
+
+
+// Functions
 
 const init = () => {
     // will call functions that will get num of wins and losses
@@ -68,7 +73,7 @@ const renderBlanks = () => {
     // use a for loop 
     // to push _ into wordDisplay for the lenght of the split chosen word 
 
-    
+
 
 
 
@@ -128,3 +133,43 @@ const checkLetters = (letter) => {
 
 
 };
+
+const resetScore = () => {
+    //assign wins & losses to 0
+
+    // call setWins and setLosses
+};
+
+
+// Event Listeners 
+
+$('.start-button').on('click', function (event){
+    alert('I am alive')
+});
+
+
+
+$('.reset-button').on('click', function (event){
+    alert('I am alive')
+});
+
+
+document.addEventListener('keydown', function (event) {
+    // if timer === 0 
+    // return out 
+
+
+    // assign var to hold event.key.toLowerCase
+    //assign var to hold all alphabet
+
+
+    // use an if statement to check if alphabet var.includes(key)
+        // assign var of letterGuessed = event.key
+        //call checkLetters with letterGuessed passed in 
+        // call checkWin
+
+
+})
+
+
+// call init()
