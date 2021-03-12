@@ -3,8 +3,8 @@ const allWords = ['javascript', 'array', 'object', 'condition', 'boolean'];
 let chosenWord = '';
 
 let numOfBlanks = 0;
-let wins = 2;
-let losses = 2;
+let wins = 0;
+let losses = 0;
 
 let isWin = false
 
@@ -28,22 +28,23 @@ const startGame = () => {
 };
 
 const winGame = () => {
-    // will text to user that they won 
 
-    // add ++ to wins 
+    $('.word-blanks').text("You've Won!!")
 
-    // call function to set wins to local storage
+    wins++;
+
+    setWins();
 
 
-};
+}; // DONE
 
 const loseGame = () => {
-       // will text to user that they lost
+    $('.word-blanks').text("Try Again!!")
 
-    // add ++ to losses
+    losses++;
 
-    // call function to set the losses to local storage 
-};
+    setLosses();
+}; // DONE
 
 const startTimer = () => {
 
@@ -99,11 +100,11 @@ const setWins = () => {
 
 }; //DONE 
 
+
 const setLosses = () => {
 
     localStorage.setItem('losses', losses);
 }; // DONE
-
 
 
 
