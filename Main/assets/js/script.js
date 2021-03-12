@@ -9,7 +9,7 @@ let losses = 0;
 let isWin = false
 
 let timer;
-let timerCount;
+let timerCount = 10;
 
 
 // Functions
@@ -46,17 +46,24 @@ const loseGame = () => {
 };
 
 const startTimer = () => {
-    // set up a setInterval 
 
-    // display the timer to the user 
+    timer = setInterval(function () {
+        
+    timerCount--;
 
-    // if isWin && timer > 0 
-        // call winGame
+    $('.timer-count').text(timerCount);
 
-    // if timer === 0 
-        // call loseGame
+        if (isWin && timerCount > 0) {
+            clearInterval(timer)
+            winGame();
+        }
 
-
+        if (timer === 0) {
+            clearInterval(timer);
+            loseGame();
+        }
+        
+    },1000)
 };
 
 const renderBlanks = () => {
@@ -143,9 +150,7 @@ const resetScore = () => {
 
 // Event Listeners 
 
-$('.start-button').on('click', function (event){
-    alert('I am alive')
-});
+$('.start-button').on('click', startTimer);
 
 
 
